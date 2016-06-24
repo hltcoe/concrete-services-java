@@ -21,9 +21,9 @@ Requirements
 ------------
 
 Concrete Core requires the following:
-* Java, 1.6 or greater.
+* Java, 1.8 or greater.
 * [Apache Maven](http://maven.apache.org/), 3.0.4 or greater
-* [Apache Thrift](http://thrift.apache.org/), 0.9.1
+* [Apache Thrift](http://thrift.apache.org/), 0.9.3
 * `bash` shell
 
 Installation (*nix only)
@@ -45,11 +45,7 @@ if you just cloned the project per above, this would be `concrete/thrift`.
 
 Next, set the environment variable `PATH_TO_CONCRETE_SERVICES_FILES`
 to the path where the concrete services`.thrift` files exist on disk. For example,
-if you just cloned the project, this would be `$(pwd)/concrete-services-core/thrift`.
-
-You also need a `jdk` version `1.6` installed. This is necessary
-to support some legacy pipelines and projects. Set `JAVA_1_6_HOME`
-to the path of JDK1.6.
+if you just cloned that project, it would be `$(pwd)/concrete-services-core/thrift`.
 
 Afterwards, running:
 
