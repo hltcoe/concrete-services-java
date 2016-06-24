@@ -4,8 +4,8 @@
 
   <parent>
     <groupId>edu.jhu.hlt</groupId>
-    <artifactId>mvn-oss-parent</artifactId>
-    <version>2</version>
+    <artifactId>concrete-parent</artifactId>
+    <version>4.10</version>
   </parent>
 
   <groupId>edu.jhu.hlt</groupId>
@@ -118,12 +118,4 @@
       </plugin>
     </plugins>
   </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>edu.jhu.hlt</groupId>
-      <artifactId>concrete-core</artifactId>
-      <version>4.10</version>
-    </dependency>
-  </dependencies>
 </project>
