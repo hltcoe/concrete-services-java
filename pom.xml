@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>edu.jhu.hlt</groupId>
+    <artifactId>mvn-oss-parent</artifactId>
+    <version>2</version>
+  </parent>
+
+  <groupId>edu.jhu.hlt</groupId>
+  <artifactId>concrete-services-core</artifactId>
+  <version>4.9.0</version>
+  <name>Concrete Services core library</name>
+  <description>Library with Java classes for Thrift-based Concrete HLT data schema</description>
+  <url>https://github.com/hltcoe/concrete-core</url>
+
+  <developers>
+    <developer>
+      <email>max.thomas@jhu.edu</email>
+      <name>Max Thomas</name>
+      <url>https://github.com/maxthomas</url>
+      <id>maxthomas</id>
+    </developer>
+  </developers>
+
+  <organization>
+    <name>Johns Hopkins University HLTCOE</name>
+    <url>http://hltcoe.jhu.edu</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>BSD 2-Clause License</name>
+      <url>http://opensource.org/licenses/BSD-2-Clause</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <fork>true</fork>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.thrift.tools</groupId>
+        <artifactId>maven-thrift-plugin</artifactId>
+        <version>0.1.11</version>
+        <configuration>
+          <thriftSourceRoot>${thrift.sources}</thriftSourceRoot>
+        </configuration>
+        <executions>
+          <execution>
+            <id>thrift-sources</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <id>enforce-property</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireEnvironmentVariable>
+                  <variableName>PATH_TO_CONCRETE_SERVICES_FILES</variableName>
+                  <message>You must set the environment variable PATH_TO_CONCRETE_SERVICES_FILES to the path of the concrete-services .thrift files; consult README.md for the build process</message>
+                </requireEnvironmentVariable>
+                <requireEnvironmentVariable>
+                  <variableName>PATH_TO_CONCRETE_FILES</variableName>
+                  <message>You must set the environment variable PATH_TO_CONCRETE_FILES to the path of the Concrete .thrift files; consult README.md for the build process</message>
+                </requireEnvironmentVariable>
+                <requireEnvironmentVariable>
+                  <variableName>JAVA_1_6_HOME</variableName>
+                  <message>You must set the environment variable JAVA_1_6_HOME to the path of JDK1.6; consult README.md for the build process</message>
+                </requireEnvironmentVariable>
+              </rules>
+              <fail>true</fail>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <executions>
+          <execution>
+            <id>generate-thrift</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <executable>${basedir}/src/main/scripts/build-thrift.sh</executable>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.thrift</groupId>
+      <artifactId>libthrift</artifactId>
+      <version>0.9.1</version>
+    </dependency>
+  </dependencies>
+</project>
