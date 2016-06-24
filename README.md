@@ -2,12 +2,10 @@ Copyright 2012-2015 Johns Hopkins University HLTCOE. All rights
 reserved.  This software is released under the 2-clause BSD license.
 See LICENSE in the project root directory.
 
-Concrete Core
+Concrete services
 ========
-![Maven Badges](https://maven-badges.herokuapp.com/maven-central/edu.jhu.hlt/concrete-core/badge.svg)
-[![javadoc.io](https://javadocio-badges.herokuapp.com/edu.jhu.hlt/concrete-core/badge.svg)](http://www.javadoc.io/doc/edu.jhu.hlt/concrete-core/)
 
-Provides Java classes for the [Concrete](https://github.com/hltcoe/concrete) HLT data schema.
+Provides Java classes for the [Concrete](https://github.com/hltcoe/concrete) services schema.
 
 Maven dependency
 ---
