@@ -10,6 +10,7 @@ before_script:
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
 deploy:
+  stage: deploy
   image: 10.1.8.1:5000/coe-maven:latest
   script:
     - 'ssh://git@gitlab.hltcoe.jhu.edu:12321/concrete/concrete-services.git'
