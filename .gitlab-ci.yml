@@ -13,8 +13,8 @@ deploy:
   stage: deploy
   image: 10.1.8.1:5000/coe-maven:latest
   script:
-    - 'ssh://git@gitlab.hltcoe.jhu.edu:12321/concrete/concrete-services.git'
-    - 'ssh://git@gitlab.hltcoe.jhu.edu:12321/concrete/concrete.git'
+    - 'git clone ssh://git@gitlab.hltcoe.jhu.edu:12321/concrete/concrete-services.git'
+    - 'git clone ssh://git@gitlab.hltcoe.jhu.edu:12321/concrete/concrete.git'
     - 'export PATH_TO_CONCRETE_FILES="$(pwd)/concrete/thrift/"'
     - 'export PATH_TO_CONCRETE_SERVICES_FILES="$(pwd)/concrete-services/thrift/"'
     - mvn clean deploy -B -Pcoe-release
