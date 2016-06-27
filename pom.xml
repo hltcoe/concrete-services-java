@@ -10,7 +10,7 @@
 
   <groupId>edu.jhu.hlt</groupId>
   <artifactId>concrete-services-core</artifactId>
-  <version>4.10.0</version>
+  <version>4.10.2-SNAPSHOT</version>
   <name>Concrete Services core library</name>
   <description>Library with Java classes for Thrift-based Concrete HLT data schema</description>
   <url>https://github.com/hltcoe/concrete-core</url>
