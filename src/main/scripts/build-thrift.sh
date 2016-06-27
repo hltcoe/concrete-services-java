@@ -1,4 +1,5 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env bash
+set -e
 [[ -z $PATH_TO_CONCRETE_FILES ]] && $(echo "PATH_TO_CONCRETE_FILES must be set."; exit 1)
 [[ -z $PATH_TO_CONCRETE_SERVICES_FILES ]] && $(echo "PATH_TO_CONCRETE_SERVICES_FILES must be set."; exit 1)
 [[ -z $THRIFT_OUT_DIR ]] && THRIFT_OUT_DIR='src/main/java'
