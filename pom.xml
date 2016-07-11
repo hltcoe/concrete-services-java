@@ -4,13 +4,13 @@
 
   <parent>
     <groupId>edu.jhu.hlt</groupId>
-    <artifactId>hltcoe-concrete-parent</artifactId>
-    <version>4.10</version>
+    <artifactId>mvn-oss-parent</artifactId>
+    <version>2</version>
   </parent>
 
   <groupId>edu.jhu.hlt</groupId>
   <artifactId>concrete-services-core</artifactId>
-  <version>4.10.2</version>
+  <version>4.10.3</version>
   <name>Concrete Services core library</name>
   <description>Library with Java classes for Thrift-based Concrete HLT data schema</description>
   <url>https://github.com/hltcoe/concrete-core</url>
@@ -112,4 +112,12 @@
       </plugin>
     </plugins>
   </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>edu.jhu.hlt</groupId>
+      <artifactId>concrete-core</artifactId>
+      <version>4.10</version>
+    </dependency>
+  </dependencies>
 </project>
