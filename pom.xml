@@ -135,5 +135,10 @@
       <artifactId>concrete-core</artifactId>
       <version>4.10-rework</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.thrift</groupId>
+      <artifactId>libthrift</artifactId>
+      <version>1.0.0</version>
+    </dependency>    
   </dependencies>
 </project>
